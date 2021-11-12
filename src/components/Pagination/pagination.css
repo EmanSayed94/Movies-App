@@ -4,31 +4,37 @@
   align-items: center;
   margin: 20px 0px;
   background-color: var(--dark);
-  padding: 10px;
+  width: 100%;
+  padding: 10px 0;
 }
 .pagination li {
-  padding: 10px;
+  padding: 12px;
+}
+@media screen and (max-width: 600px) {
+  .pagination li {
+    padding: 4px;
+  }
 }
 
 .pagination a {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: var(--white);
 }
 
 .pagination__link--active {
   color: black;
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgb(160, 83, 160);
-  border-color: violet;
+  border-color: var(--active);
 }
 
 .pagination__link--disabled a {
   color: rgb(105 100 124);
 }
 .previous__Link__ClassName {
-  color: white;
+  color: var(--white);
 }
 .next__Link__ClassName {
-  color: white;
+  color: var(--white);
 }

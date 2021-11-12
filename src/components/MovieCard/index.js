@@ -4,8 +4,11 @@ import { ADD_TO_FAVOURITES } from '../../redux/actionTypes'
 import './card.css'
 
 const MovieCard = (props) => {
+  const dispatch = useDispatch()
+
   const movie = props.movie
-  const { poster_path, overview, title, vote_average } = movie
+  const { poster_path, title, vote_average } = movie
+
   const favouriteMovies = useSelector(
     (state) => state.moviesReducer.favouriteMovies,
   )
@@ -13,14 +16,12 @@ const MovieCard = (props) => {
     favouriteMovies.find((favMovie) => favMovie.id === movie.id),
   )
 
-  const dispatch = useDispatch()
-
   const handleAddToFavourite = () => {
     dispatch({ type: ADD_TO_FAVOURITES, movie: movie, liked: !liked })
     setLiked(!liked)
   }
   return (
-    <div className="movie__card">
+    <div className="movie-card">
       <img
         src={`https://image.tmdb.org/t/p/w300${poster_path}`}
         alt="Avatar"
@@ -61,12 +62,10 @@ const MovieCard = (props) => {
           ></i>
         </div>
       </div>
-      <div className="movie__details">
+      <div className="movie-details">
         <h4 style={{ textAlign: 'center' }}>
           <b>{title}</b>
         </h4>
-
-        {/* <p>{overview}</p> */}
       </div>
     </div>
   )

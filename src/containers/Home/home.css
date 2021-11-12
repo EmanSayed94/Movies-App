@@ -1,9 +1,18 @@
-.movies__container {
+.search-container {
   display: flex;
+  width: 100%;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: auto;
 }
-.movie_item {
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  justify-content: center;
+  justify-items: center;
+}
+.movie-item {
   align-self: flex-start;
 }
 

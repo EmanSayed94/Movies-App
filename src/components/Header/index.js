@@ -6,7 +6,7 @@ const Header = () => {
   const [displayMenu, setDisplayMenu] = useState(false)
   return (
     <header style={{ width: '100%' }}>
-      <nav>
+      <nav className="navbar">
         <ul className="menu">
           <li className="logo">
             <Link

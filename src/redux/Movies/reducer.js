@@ -16,13 +16,9 @@ const initialState = {
 }
 const moviesReducer = (state = initialState, action) => {
   let favouriteMovies = [...state.favouriteMovies]
-  let movies = []
+
   switch (action.type) {
     case GET_FILTERED_MOVIES:
-      movies = action.payload.results
-      movies = movies.map((movie) =>
-        favouriteMovies.indexOf(movie) ? (movie.liked = true) : movie,
-      )
       return {
         ...state,
         totalPages: action.payload.total_pages,

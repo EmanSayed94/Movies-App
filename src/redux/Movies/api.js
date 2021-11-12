@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const api_key = '4ba6205cde9f152f3a790f58cff4ac50'
+import { api_key } from '../..'
 
 export const getFilteredMoviesAsync = async (filterKeyword, page = 1) => {
   console.log(filterKeyword, 'filterKeyword from api')

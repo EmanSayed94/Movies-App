@@ -15,6 +15,7 @@ export const getFilteredMovie = (filter, page) => {
       dispatch(getFilteredMoviesSuccess(data))
     } catch (error) {
       console.log(error)
+      dispatch(handleError())
     }
   }
 }
@@ -33,6 +34,7 @@ export const searchForMovies = (searchValue, page) => {
       dispatch(searchForMoviesSuccess(data))
     } catch (error) {
       console.log(error)
+      dispatch(handleError())
     }
   }
 }

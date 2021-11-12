@@ -3,34 +3,31 @@ import { categoriesArr } from './categories.constants'
 
 import './categories.css'
 
-const CategoriesDropdown = ({ handleFilterChange, filter }) => {
+const CategoriesDropdown = ({ handleFilterChange, filter, filterText }) => {
   return (
     <>
       <div className="dropdown">
-        <button className="dropbtn">{filter}</button>
-        <div className="dropdown__content">
-          {categoriesArr.map((category) => (
+        <button className="dropbtn">
+          {filterText}
+          <i
+            className="fa fa-caret-down"
+            aria-hidden="true"
+            color="white"
+            style={{ margin: '0 5px 0 15px' }}
+          ></i>
+        </button>
+        <div className="dropdown-content">
+          {categoriesArr.map((item) => (
             <div
-              key={category}
-              className="dropdown__item"
-              onClick={() => handleFilterChange(category)}
+              key={item.value}
+              className="dropdown-item"
+              onClick={() => handleFilterChange(item.value, item.category)}
             >
-              {category}
+              {item.category}
             </div>
           ))}
         </div>
       </div>
-      {/* <select className="dropdown dropbtn">
-        {categoriesArr.map((category) => (
-          <option
-            key={category.value}
-            className="dropdown__item"
-            onClick={() => handleFilterChange(category.value)}
-          >
-            {category.name}
-          </option>
-        ))}
-      </select> */}
     </>
   )
 }
