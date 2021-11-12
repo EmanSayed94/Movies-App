@@ -1,0 +1,15 @@
+.movies__container{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+   
+}
+
+.no-Result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10%;
+  color: white;
+}
