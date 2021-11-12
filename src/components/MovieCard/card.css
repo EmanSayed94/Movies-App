@@ -20,61 +20,49 @@
 
   } */
 
-
-
-.movie__card{
-    width: 220px;
-    height: 400px;
-    margin: 20px 30px;
-    border-radius: 10px;
-    position: relative
-
+.movie__card {
+  width: 220px;
+  height: 400px;
+  margin: 20px 30px;
+  border-radius: 10px;
+  position: relative;
 }
-.movie__card img{
-    border-radius: 10px  ;   
-    border-bottom: 0;
+.movie__card img {
+  border-radius: 10px;
+  border-bottom: 0;
 }
-.movie__details{
-position: absolute;
-width: 100%;
-bottom:0px;
-background-color: #0000009c;
-color: white;
-height: 150px;
-padding:20px;
+.movie__details {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  background-color: #0000009c;
+  color: white;
+  height: 100px;
+  padding: 20px;
 }
-.movie__details h4{
-    margin: 5px 0;
+.movie__details h4 {
+  margin: 5px 0;
 }
-.movie__details p{
-    margin: 5px 0;
-    font-size: 12px;
+.movie__details p {
+  margin: 5px 0;
+  font-size: 12px;
 }
-.movie__rating i{
-color: gold;
-margin: 1px;
+.movie__rating i {
+  color: gold;
+  margin: 1px;
 }
 .fa-heart-o {
-    color: red;
-    cursor: pointer;
-  }
-  
-  .fa-heart {
-    color: red;
-    cursor: pointer;
-  }
-  /* .liked{
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+/* .liked{
       background-color: red;
   } */
-
-
-
-
-
-
-
-
-
 
 /* 
  .card {

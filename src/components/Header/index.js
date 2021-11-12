@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import './header.css'
 
 const Header = () => {
@@ -8,24 +9,26 @@ const Header = () => {
       <nav>
         <ul className="menu">
           <li className="logo">
-            <a
-              href="#"
+            <Link
+              to="/"
               style={{
                 fontFamily: 'Pacifico,cursive',
                 color: 'violet',
                 fontSize: '25px',
               }}
             >
-              {/* <img src="../../assets/logo.jpg" alt="logo" /> */}
               Watch Movie
-            </a>
+            </Link>
           </li>
-          <li className={`item ${displayMenu && 'active'}`}>
-            <a href="#">Home</a>
-          </li>
-          <li className={`item ${displayMenu && 'active'}`}>
-            <a href="#">Favourites</a>
-          </li>
+          <NavLink to="/" className={`item ${displayMenu && 'display'}`}>
+            <li>Home</li>
+          </NavLink>
+          <NavLink
+            to="/favourite"
+            className={`item ${displayMenu && 'display'}`}
+          >
+            <li>Favourites</li>
+          </NavLink>
 
           <li className="toggle" onClick={() => setDisplayMenu(!displayMenu)}>
             <span className="bars"></span>

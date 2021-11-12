@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { ADD_TO_FAVOURITES } from '../../redux/actionTypes'
 import './card.css'
 
-const MovieCard = ({
-  movie: { poster_path, overview, title, vote_average },
-}) => {
-  const [liked, setLiked] = useState(false)
+const MovieCard = (props) => {
+  const movie = props.movie
+  const { poster_path, overview, title, vote_average } = movie
+  const favouriteMovies = useSelector(
+    (state) => state.moviesReducer.favouriteMovies,
+  )
+  const [liked, setLiked] = useState(
+    favouriteMovies.find((favMovie) => favMovie.id === movie.id),
+  )
 
+  const dispatch = useDispatch()
+
+  const handleAddToFavourite = () => {
+    dispatch({ type: ADD_TO_FAVOURITES, movie: movie, liked: !liked })
+    setLiked(!liked)
+  }
   return (
     <div className="movie__card">
       <img
@@ -40,7 +53,7 @@ const MovieCard = ({
             {vote_average}
           </span>
         </div>
-        <div onClick={() => setLiked(!liked)}>
+        <div onClick={handleAddToFavourite}>
           <i
             className={`fa ${liked ? 'fa-heart' : 'fa-heart-o'} fa-2x liked`}
             aria-hidden="true"
@@ -56,28 +69,6 @@ const MovieCard = ({
         {/* <p>{overview}</p> */}
       </div>
     </div>
-    // <div className="card">
-    //   <div className="poster">
-    //     <img src="assets/monstersinc.jpg" alt="" />
-    //   </div>
-    //   <div className="details">
-    //     <h2>Monasters</h2>
-    //     <span>Directed By</span>
-    //     <div className="rating">
-    //       <i className="fa fa-star"></i>
-    //       <i className="fa fa-star"></i>
-    //       <i className="fa fa-star"></i>
-    //       <i className="fa fa-star"></i>
-    //       <i className="fa fa-star"></i>
-    //       <span>4/5</span>
-    //     </div>
-    //     <div className="tags">
-    //       <div className="fantasy">fantasy</div>
-    //       <div className="romance">romance</div>
-    //     </div>
-    //     <div className="info"></div>
-    //   </div>
-    // </div>
   )
 }
 

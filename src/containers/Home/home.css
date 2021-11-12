@@ -1,11 +1,13 @@
-.movies__container{
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-   
+.movies__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.movie_item {
+  align-self: flex-start;
 }
 
-.no-Result{
+.no-Result {
   display: flex;
   justify-content: center;
   align-items: center;

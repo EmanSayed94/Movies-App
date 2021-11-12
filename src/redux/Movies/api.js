@@ -8,7 +8,7 @@ export const getFilteredMoviesAsync = async (filterKeyword, page = 1) => {
   )
   return response.data
 }
-export const SearchForMoviesAsync = async (searchValue, page = 1) => {
+export const searchForMoviesAsync = async (searchValue, page = 1) => {
   console.log(searchValue, 'searchValue from api')
   const response = await axios.get(
     `search/movie?api_key=${api_key}&query=${searchValue}&page=${page}`,

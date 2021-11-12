@@ -13,10 +13,11 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter></BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 )
