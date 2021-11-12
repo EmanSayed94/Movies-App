@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { ADD_TO_FAVOURITES } from '../../redux/actionTypes'
+
 import './card.css'
 
 const MovieCard = (props) => {

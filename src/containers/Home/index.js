@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-
 import { useDispatch, useSelector } from 'react-redux'
-import { getFilteredMovie, searchForMovies } from '../../redux/Movies/actions'
 
-import { categoriesArr } from '../../components/CategoriesDropdown/categories.constants'
+import { getFilteredMovie, searchForMovies } from '../../redux/Movies/actions'
+import { categoriesArr } from '../../components/CategoriesDropdown/constants'
 import SearchBox from '../../components/SearchBox'
 import CategoriesDropdown from '../../components/CategoriesDropdown'
 import Spinner from '../../components/UIComponents/Spinner'
