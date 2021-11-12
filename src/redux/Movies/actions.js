@@ -11,7 +11,6 @@ export const getFilteredMovie = (filter, page) => {
     try {
       dispatch({ type: LOADING_MOVIES })
       const data = await getFilteredMoviesAsync(filter, page)
-      console.log(data)
       dispatch(getFilteredMoviesSuccess(data))
     } catch (error) {
       console.log(error)
@@ -30,7 +29,6 @@ export const searchForMovies = (searchValue, page) => {
     try {
       dispatch({ type: LOADING_MOVIES })
       const data = await searchForMoviesAsync(searchValue, page)
-      console.log(data)
       dispatch(searchForMoviesSuccess(data))
     } catch (error) {
       console.log(error)

@@ -2,7 +2,6 @@ import axios from 'axios'
 import { api_key } from '../..'
 
 export const getFilteredMoviesAsync = async (filterKeyword, page = 1) => {
-  console.log(filterKeyword, 'filterKeyword from api')
   const response = await axios.get(
     `movie/${filterKeyword}?api_key=${api_key}&page=${page}`,
   )

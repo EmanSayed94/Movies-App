@@ -36,8 +36,12 @@ const Home = () => {
   }
 
   useEffect(() => {
+    fetchData(initialPage)
+  }, [])
+
+  useEffect(() => {
     const interval = setTimeout(() => {
-      fetchData(initialPage, searchValue)
+      if (searchValue !== '') fetchData(initialPage, searchValue)
     }, 1500)
     return () => clearTimeout(interval)
   }, [searchValue])
@@ -51,6 +55,7 @@ const Home = () => {
   const handleClearSearch = () => {
     setSearchValue('')
     setCurrentPage(initialPage)
+    fetchData(initialPage, '', filter)
   }
   const handleFilterChange = (filter, filterText) => {
     setFilter(filter)
@@ -58,12 +63,10 @@ const Home = () => {
     setSearchValue('')
     setCurrentPage(initialPage)
     fetchData(initialPage, '', filter)
-    console.log(filter)
   }
 
   const handlePageClick = (event) => {
     const newPage = event.selected
-    console.log(newPage, 'pagee')
     fetchData(newPage)
     setCurrentPage(newPage)
   }
@@ -78,7 +81,6 @@ const Home = () => {
         />
         <CategoriesDropdown
           handleFilterChange={handleFilterChange}
-          filter={filter}
           filterText={filterText}
         />
       </div>

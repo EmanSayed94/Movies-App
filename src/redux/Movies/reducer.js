@@ -52,7 +52,6 @@ const moviesReducer = (state = initialState, action) => {
           (favMovie) => favMovie.id !== movie.id,
         )
       }
-      console.log(favouriteMovies, 'favouriteMovies')
       localStorage.setItem('favouriteMovies', JSON.stringify(favouriteMovies))
       return { ...state, favouriteMovies }
     default:

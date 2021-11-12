@@ -3,7 +3,7 @@ import { categoriesArr } from './categories.constants'
 
 import './categories.css'
 
-const CategoriesDropdown = ({ handleFilterChange, filter, filterText }) => {
+const CategoriesDropdown = ({ handleFilterChange, filterText }) => {
   return (
     <>
       <div className="dropdown">

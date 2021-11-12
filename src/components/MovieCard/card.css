@@ -1,5 +1,5 @@
 .movie-card {
-  width: 220px;
+  width: 240px;
   height: 400px;
   margin: 20px 30px;
   border-radius: 10px;
@@ -8,6 +8,26 @@
 .movie-card img {
   border-radius: 10px;
   border-bottom: 0;
+}
+
+.movie-card {
+  overflow: hidden;
+}
+
+.movie-card img {
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover img {
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
 }
 .movie-details {
   position: absolute;
