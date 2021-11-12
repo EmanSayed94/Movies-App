@@ -47,8 +47,10 @@ const Home = () => {
 
   const handleSearchChange = (e) => {
     const search = e.target.value
-    setCurrentPage(initialPage)
-    setSearchValue(search)
+    if (search) {
+      setCurrentPage(initialPage)
+      setSearchValue(search)
+    } else handleClearSearch()
   }
 
   const handleClearSearch = () => {
